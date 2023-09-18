@@ -1,0 +1,25 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\UserInterface.csproj": {}
+  },
+  "projects": {
+    "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\UserInterface.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\UserInterface.csproj",
+        "projectPath": "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\UserInterface.csproj",
+        "packagesPath": "C:\\Users\\binju\\.nuget\\packages\\",
+        "outputPath": "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\binju\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        }
+      }
+    }
+  }
+}

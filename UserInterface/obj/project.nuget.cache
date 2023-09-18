@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "X0h3l4oj0LJnMRsSHWlCgKHD/C590+UUDrsDMfQ5hypmcibd8w9lCXrqxanvbLFPsnfhuYmn2qq086kie6s4FA==",
+  "success": false,
+  "projectFilePath": "D:\\Web\\HilalCMS\\WebAPI\\UserInterface\\UserInterface.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to read project information for 'UserInterface': Invalid framework identifier ''."
+    }
+  ]
+}

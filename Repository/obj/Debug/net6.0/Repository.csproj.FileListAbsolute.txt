@@ -1,0 +1,17 @@
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Repository.deps.json
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Repository.runtimeconfig.json
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Repository.dll
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Repository.pdb
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Domain.dll
+D:\Web\HilalCMS\WebAPI\Repository\bin\Debug\net6.0\Domain.pdb
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.csproj.AssemblyReference.cache
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.AssemblyInfoInputs.cache
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.AssemblyInfo.cs
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.csproj.CoreCompileInputs.cache
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.csproj.CopyComplete
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.dll
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\refint\Repository.dll
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.pdb
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\Repository.genruntimeconfig.cache
+D:\Web\HilalCMS\WebAPI\Repository\obj\Debug\net6.0\ref\Repository.dll
