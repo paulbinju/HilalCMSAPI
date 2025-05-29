@@ -27,15 +27,18 @@ namespace Services.DTO
         public string? Publication { get; set; }
         public int AuthorID { get; set; }
         public string? Author { get; set; }
-        public int? CategoryID { get; set; }
-        public string? CategoryName { get; set; }
-        public int? SubCategoryID { get; set; }
-        public string? SubCategoryName { get; set; }
         public int? IssueID { get; set; }
         public string? Issue { get; set; }
-        public bool PublishToTA { get; set; }
-        public bool PublishToMAG { get; set; }
         public int? RefNo { get; set; }
+        public string CategoryID { get; set; }
+        public string SubCategoryID { get; set; }
+        public bool ShowInTA { get; set; }
+        public bool ShowInMAG { get; set; }
+        public string? PREmails { get; set; }
         public string? CreatedDate { get; set; }
+        public bool Published { get; set; }
+        public DateTime? PublishedDate { get; set; }
+         
+
     }
 }

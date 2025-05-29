@@ -14,9 +14,7 @@ namespace Domain.EntityMapper
         public void Configure(EntityTypeBuilder<Lookup> builder)
         {
             builder.HasKey(x => x.LookupID);
-            builder.Property(x => x.LookupID).ValueGeneratedOnAdd();
             builder.Property(x => x.Title).HasMaxLength(128);
-
         }
     }
 }

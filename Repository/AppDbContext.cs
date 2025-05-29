@@ -22,10 +22,12 @@ namespace Repository
         public DbSet<Issue> Issues { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
-
         public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleCategory> ArticleCategories { get; set; }
+        public DbSet<ArticleSubCategory> ArticleSubCategories { get; set; }
         public DbSet<Newsletter> Newsletters { get; set; }
         public DbSet<NewsletterDetail> NewsletterDetails { get; set; }
+        public DbSet<Event> Events { get; set; }    
 
 
 

@@ -16,6 +16,5 @@ namespace Domain.Models
         public Lookup Role { get; set; }
 
         public ICollection<Article> Articles { get; set; }
-
     }
 }

@@ -31,11 +31,9 @@ namespace UserInterface.Controllers
         public async Task<IActionResult> GetAll() => Ok(await Mediator.Send(new SubCategoryQuery()));
 
         // GET api/<SubCategoryController>/5
-        [HttpGet("{id}")]
-        public async Task<SubCategory> Get(int id)
-        {
-            return await _SubCategory.GetbyID(id);
-        }
+        [HttpPost("ByCategoryId")]
+        public async Task<IActionResult> GetGetbyID([FromBody] int[] categoryID) => Ok(await Mediator.Send(new SubCategoryByCategoryIdQuery() { categoryID = categoryID }));
+
 
         // POST api/<SubCategoryController>
         [HttpPost]

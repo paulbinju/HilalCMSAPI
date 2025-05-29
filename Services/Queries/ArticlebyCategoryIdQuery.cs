@@ -13,12 +13,12 @@ using System.Threading.Tasks;
 
 namespace Services.Queries
 {
-    public class ArticlebyCategoryIdQuery : IRequest<IList<ArticleDTO>>
+    public class ArticleByCategoryIdQuery : IRequest<IList<ArticleDTO>>
     {
         public int categoryID { get; set; }
 
     }
-    public class ArticlebySubCategoryIdHandler : IRequestHandler<ArticlebyCategoryIdQuery, IList<ArticleDTO>>
+    public class ArticlebySubCategoryIdHandler : IRequestHandler<ArticleByCategoryIdQuery, IList<ArticleDTO>>
     {
 
         private readonly IConfiguration _configuration;
@@ -27,9 +27,9 @@ namespace Services.Queries
             _configuration = configuration;
         }
 
-        public async Task<IList<ArticleDTO>> Handle(ArticlebyCategoryIdQuery query, CancellationToken cancellationToken)
+        public async Task<IList<ArticleDTO>> Handle(ArticleByCategoryIdQuery query, CancellationToken cancellationToken)
         {
-            var sql = @"select top 100 a.articleid, a.title,at.title as articletype,pub.title as publication,u.name,c.categoryname,sc.subcategoryname  from articles a
+            var sql = @"select top 100 a.articleid, a.title,at.title as articletype,pub.title as publication,u.name from articles a
                             left join Lookups at on at.lookupid= a.articletypeid
                             left join Lookups pub on pub.lookupid= a.publicationid
                             left join users u on u.userid= a.authorid

@@ -27,12 +27,11 @@ namespace Services.Queries
 
             public async Task<IList<ArticleDTO>> Handle(ArticleQuery query, CancellationToken cancellationToken)
             {
-                var sql = @"select a.*,at.title as articletype,pub.title as publication,u.name,c.categoryname,sc.subcategoryname  from articles a
+                var sql = @"select a.*,at.title as articletype,pub.title as publication,u.name from articles a
                             left join Lookups at on at.lookupid= a.articletypeid
                             left join Lookups pub on pub.lookupid= a.publicationid
                             left join users u on u.userid= a.authorid
-                            left join categories c on c.categoryid= a.categoryid
-                            left join subcategories sc on sc.subcategoryid=a.subcategoryid order by a.articleid desc";
+                            order by a.articleid desc";
 
                 using (var connection = new SqlConnection(_configuration.GetConnectionString("ConnStr")))
                 {
