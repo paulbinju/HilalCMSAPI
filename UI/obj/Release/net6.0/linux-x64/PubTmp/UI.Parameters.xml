@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="hilalmastercms" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Web\\HilalCMS\\WebAPI\\UI\\obj\\Release\\net6\.0\\linux-x64\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

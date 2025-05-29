@@ -39,6 +39,7 @@ namespace UserInterface.Controllers
         [HttpPost]
         public void Post([FromBody] IssueDTO issuedto)
         {
+            issuedto.Published = false;
             _issue.Create(_mapper.Map<Issue>(issuedto));
         }
 
@@ -48,6 +49,12 @@ namespace UserInterface.Controllers
         {
             Issue issue = _mapper.Map<Issue>(issuedto);
             issue.IssueID = id;
+
+            if (!issuedto.Published)
+            {
+                issue.Published = false;
+                issue.PublishDate = null;
+            }
             _issue.Update(issue);
         }
 

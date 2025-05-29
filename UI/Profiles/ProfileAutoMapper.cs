@@ -16,6 +16,7 @@ namespace UserInterface.Profiles
             CreateMap<SubCategoryDTO, SubCategory>();
             CreateMap<ArticleExtensionDTO, ArticleExtension>();
             CreateMap<ArticleDTO, Article>();
+            CreateMap<EventDTO, Event>();
         }
     }
 }

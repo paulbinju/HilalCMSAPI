@@ -29,16 +29,19 @@ namespace Services.Queries
 
         public async Task<IList<ArticleDTO>> Handle(ArticleByIdQuery query, CancellationToken cancellationToken)
         {
-            var sql = @"select 
-                            a.*,at.title as articletype,pub.title as publication,u.name,c.categoryname,sc.subcategoryname,aut.title as author,con.title as country
+            var sql = @"select a.Dateline,a.Byline,a.Slug,a.Title,a.ArticleBody,a.FeaturedImageURL,a.FeaturedImageCaption
+      ,a.Tags,a.CreatedDate,a.CountryID,a.ArticleTypeID,a.PublicationID,a.AuthorID,ac.CategoryID,asubc.subcategoryid as SubCategoryID
+      ,a.IssueID,a.ShowInTA,a.ShowInMAG,a.RefNo,a.LookupID,a.UserID,a.Published,a.PublishedDate
+      ,a.PREmails,at.title as articletype,pub.title as publication,u.name,aut.title as author,con.title as country
                             from articles a
                             left join Lookups at on at.lookupid= a.articletypeid
                             left join Lookups pub on pub.lookupid= a.publicationid
                             left join Lookups aut on aut.lookupid= a.authorid
                             left join users u on u.userid= a.authorid
-                            left join categories c on c.categoryid= a.categoryid
                             left join Lookups con on con.lookupid= a.countryid
-                            left join subcategories sc on sc.subcategoryid=a.subcategoryid where a.articleID=" + query.articleID;
+							left join ArticleCategories ac on ac.articleid= a.articleid
+							left join ArticleSubCategories asubc on asubc.articleid= a.articleid
+                            where a.articleID=" + query.articleID;
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("ConnStr")))
             {

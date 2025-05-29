@@ -72,3 +72,16 @@ D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\refint\UI.dll
 D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\UI.pdb
 D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\UI.genruntimeconfig.cache
 D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\ref\UI.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\Azure.Core.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\Azure.Storage.Blobs.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\Azure.Storage.Common.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\System.IO.Hashing.dll
+D:\Web\HilalCMS\WebAPI\UI\bin\Release\net6.0\System.Memory.Data.dll
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\UI.sourcelink.json
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\staticwebassets\msbuild.UI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\staticwebassets\msbuild.build.UI.props
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.UI.props
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.UI.props
+D:\Web\HilalCMS\WebAPI\UI\obj\Release\net6.0\staticwebassets.pack.json

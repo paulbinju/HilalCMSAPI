@@ -17,5 +17,6 @@ namespace Services.DTO
         public string IssueName { get; set; }
         public DateTime IssueDate { get; set; }
         public bool Published { get; set; }
+        public DateTime? PublishDate { get; set; }
     }
 }

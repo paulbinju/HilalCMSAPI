@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure.Storage.Blobs;
 using Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -33,8 +34,8 @@ namespace UserInterface.Controllers
         }
 
         [HttpGet("{ArticleID}")]
-        public async Task<IActionResult> GetAllbyArticleID(int ArticleID) => Ok(await Mediator.Send(new ArticleExtensionQuery() { ArticleID = ArticleID}));
- 
+        public async Task<IActionResult> GetAllbyArticleID(int ArticleID) => Ok(await Mediator.Send(new ArticleExtensionQuery() { ArticleID = ArticleID }));
+
 
         //[HttpGet("{id}")]
         //public async Task<ArticleExtension> Get(int id)
@@ -54,11 +55,37 @@ namespace UserInterface.Controllers
         [HttpPost]
         public async Task<ArticleExtensionDTO> Post([FromForm] ArticleExtensionDTO articleExtensionDTO)
         {
-
+            if (articleExtensionDTO.TextContent == null)
+            {
+                articleExtensionDTO.TextContent = "";
+            }
             var isu = _mapper.Map<ArticleExtension>(articleExtensionDTO);
             var articlextension = _articleExtension.Create(isu);
 
 
+            //if (articleExtensionDTO.imageURL != null)
+            //{
+            //    string blobstoragestring = "DefaultEndpointsProtocol=https;AccountName=hilalimages;AccountKey=uV0jNFWmkuUNKeLnWdICr4kF2qNevRNJSgc3dMolvIAKHIrZYi3azPFLYTm4SIy1hzOqvUjcCo+u+ASt4gV9Mg==;EndpointSuffix=core.windows.net";
+            //    string containername = "hilalcmsimages";
+            //    var container = new BlobContainerClient(blobstoragestring, containername);
+
+            //    string dbpath = "source/" + DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day + "/";
+            //    string filename = "ext-" + Convert.ToString(articlextension.ArticleExtensionID) + Path.GetExtension(articleExtensionDTO.imageURL.FileName);
+            //    string filewithpath = dbpath + filename;
+            //    var blob = container.GetBlobClient(filewithpath);
+            //    IFormFile fl = articleExtensionDTO.imageURL;
+            //    FileStream fs = new FileStream(articleExtensionDTO.imageURL.FileName, FileMode.Create, FileAccess.ReadWrite);
+            //    fl.CopyTo(fs);
+            //    fs.Seek(0, SeekOrigin.Begin);
+            //    long fslen = fs.Length;
+            //    await blob.UploadAsync(fs);
+
+            //    isu.MediaURL = dbpath + filename;
+
+            //}
+
+
+            /* save to IIS folder*/
 
             if (articleExtensionDTO.imageURL != null)
             {
@@ -66,7 +93,7 @@ namespace UserInterface.Controllers
                 string dbpath = "source\\" + DateTime.Now.Year + "\\" + DateTime.Now.Month + "\\" + DateTime.Now.Day + "\\";
                 string filename = "ext-" + Convert.ToString(articlextension.ArticleExtensionID) + Path.GetExtension(articleExtensionDTO.imageURL.FileName);
                 string filewithpath = basepath + dbpath + filename;
-                //+ basepath + dbpath + filename;
+                
 
                 DirectoryInfo dir = new DirectoryInfo(basepath + dbpath);
                 if (!dir.Exists)
@@ -79,9 +106,11 @@ namespace UserInterface.Controllers
                 }
 
                 isu.MediaURL = dbpath + filename;
+             articleExtensionDTO.TextContent = "";
             }
-
-            if (articleExtensionDTO.ArticleExtensionTypeID == 16) {
+            
+            if (articleExtensionDTO.ArticleExtensionTypeID == 17)
+            {
                 isu.MediaURL = articleExtensionDTO.MediaURL.Replace("https://www.youtube.com/watch?v=", "https://www.youtube-nocookie.com/embed/");
             }
 
@@ -91,6 +120,32 @@ namespace UserInterface.Controllers
             return articleExtensionDTO;
         }
 
+
+        private FileStream ConvertIFormFileToStream(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                throw new ArgumentException("Invalid or empty file.", nameof(file));
+            }
+
+            // Create a MemoryStream and copy the data from the IFormFile into it
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                file.CopyTo(memoryStream);
+
+                // Create a FileStream from the MemoryStream
+                // You can specify FileMode, FileAccess, and FileShare options here as needed
+                FileStream fileStream = new FileStream("path-to-save-file-on-disk", FileMode.Create, FileAccess.Write);
+
+                // Copy the data from the MemoryStream to the FileStream
+                memoryStream.CopyTo(fileStream);
+
+                // You can optionally seek back to the beginning of the FileStream
+                fileStream.Seek(0, SeekOrigin.Begin);
+
+                return fileStream;
+            }
+        }
 
 
 
@@ -110,7 +165,7 @@ namespace UserInterface.Controllers
         {
             ArticleExtension ArticleExtension = new ArticleExtension();
             ArticleExtension.ArticleExtensionID = id;
-                //await _articleExtension.GetbyID(id);
+            //await _articleExtension.GetbyID(id);
             _articleExtension.Delete(ArticleExtension);
         }
     }

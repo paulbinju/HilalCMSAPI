@@ -15,7 +15,8 @@ namespace Domain.Models
         public string Volume { get; set; }
         public string IssueName { get; set; }
         public DateTime IssueDate { get; set; }
-        public bool Published { get; set; }        
-        
+        public bool Published { get; set; }      
+        public DateTime? PublishDate { get; set; }
+
     }
 }

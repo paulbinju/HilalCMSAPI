@@ -19,10 +19,10 @@ namespace Domain.EntityMapper
             builder.Property(x => x.FeaturedImageCaption).IsRequired(false);
             builder.Property(x => x.Tags).IsRequired(false);
             builder.Property(x => x.CountryID).IsRequired(false);
-            builder.Property(x => x.CategoryID).IsRequired(false);
-            builder.Property(x => x.SubCategoryID).IsRequired(false);
             builder.Property(x => x.IssueID).IsRequired(false);
             builder.Property(x => x.RefNo).IsRequired(false);
+            builder.Property(x => x.PublishedDate).IsRequired(false);
+            builder.Property(x=>x.Published).HasDefaultValue(false);
 
             //  builder.HasOne(x => x.Author).WithMany(y => y.Articles).HasForeignKey(x => x.AuthorID).OnDelete(DeleteBehavior.ClientCascade);
             //builder.HasOne(x => x.Issue).WithMany(y => y.Articles).HasForeignKey(x => x.IssueID).OnDelete(DeleteBehavior.ClientCascade);

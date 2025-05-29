@@ -15,6 +15,7 @@ namespace Domain.EntityMapper
         {
             builder.HasKey(x => x.IssueID);
             builder.Property(x => x.IssueID).ValueGeneratedOnAdd();
+            builder.Property(x=>x.Published).HasDefaultValue(false).IsRequired();
         }
     }
 }

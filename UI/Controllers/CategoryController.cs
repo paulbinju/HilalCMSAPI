@@ -36,6 +36,9 @@ namespace UserInterface.Controllers
         {
             return await _category.GetbyID(id);
         }
+        [HttpGet("ByPubId/{publicationID}")]
+        public async Task<IActionResult> CategoryByPubId(int publicationID) => Ok(await Mediator.Send(new CategoryByPubIdQuery() { publicationID = publicationID }));
+
 
         // POST api/<CategoryController>
         [HttpPost]
